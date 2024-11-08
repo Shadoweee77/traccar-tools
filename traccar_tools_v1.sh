@@ -69,11 +69,11 @@ done
 	    curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/traccar/traccar/releases/latest > upgrade_traccar.tmp
 	    sed -i 's/tag/download/g' upgrade_traccar.tmp
             sed -i 's|$|/traccar-linux-64-*.zip|g' upgrade_traccar.tmp
-            sed -i "s/*/$(grep -E -o "v.{0,4}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
+            sed -i "s/*/$(grep -E -o "v.{0,3}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
 
 while true; do
             echo Latest available version
-            grep -E -o ".{0,22}z.{0,4}" upgrade_traccar.tmp
+            grep -E -o ".{0,21}z.{0,4}" upgrade_traccar.tmp
     read -p "Do you wish to download Traccar y/n ? " yn
     case $yn in
         [Yy]* ) wget -i upgrade_traccar.tmp; break;;
@@ -107,11 +107,11 @@ rm -f traccar.run README.txt traccar-linux-*.zip* upgrade_traccar.tmp
 	    curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/traccar/traccar/releases/latest > upgrade_traccar.tmp
 	    sed -i 's/tag/download/g' upgrade_traccar.tmp
             sed -i 's|$|/traccar-linux-64-*.zip|g' upgrade_traccar.tmp
-            sed -i "s/*/$(grep -E -o "v.{0,4}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
+            sed -i "s/*/$(grep -E -o "v.{0,3}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
 
 while true; do
             echo Latest available version
-            grep -E -o ".{0,22}z.{0,4}" upgrade_traccar.tmp
+            grep -E -o ".{0,21}z.{0,4}" upgrade_traccar.tmp
     read -p "Do you wish to download Traccar y/n ? " yn
     case $yn in
         [Yy]* ) wget -i upgrade_traccar.tmp; break;;
@@ -195,9 +195,9 @@ rm -f traccar.run README.txt traccar-linux-*.zip* upgrade_traccar.tmp
 	    curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/traccar/traccar/releases/latest > upgrade_traccar.tmp
 	    sed -i 's/tag/download/g' upgrade_traccar.tmp
             sed -i 's|$|/traccar-linux-64-*.zip|g' upgrade_traccar.tmp
-            sed -i "s/*/$(grep -E -o "v.{0,4}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
+            sed -i "s/*/$(grep -E -o "v.{0,3}" upgrade_traccar.tmp | tail -c +2)/g" upgrade_traccar.tmp
             echo Latest available version
-            grep -E -o ".{0,22}z.{0,4}" upgrade_traccar.tmp
+            grep -E -o ".{0,21}z.{0,4}" upgrade_traccar.tmp
             rm -f upgrade_traccar.tmp
             show_menu;
         ;;
